@@ -1,0 +1,183 @@
+2023-04-24 02:54:28
+ FieldBundle example 1 returned
+ FieldBundle example 2 returned, fieldcount =            1
+ FieldBundle example 3 returned, fieldcount =            3
+ FieldBundle example 4 returned, field names = pressure, pressure
+ FieldBundle name = atmosphere data
+ heat flux                                                                                                                                                                                                                                                       
+ pressure                                                                                                                                                                                                                                                        
+ temperature                                                                                                                                                                                                                                                     
+ temperature                                                                                                                                                                                                                                                     
+ pressure                                                                                                                                                                                                                                                        
+ heat flux                                                                                                                                                                                                                                                       
+ FieldBundle example 1 returned
+ FieldBundle example 2 returned, fieldcount =            1
+ FieldBundle example 3 returned, fieldcount =            3
+ FieldBundle example 4 returned, field names = pressure, pressure
+ FieldBundle name = atmosphere data
+ heat flux                                                                                                                                                                                                                                                       
+ pressure                                                                                                                                                                                                                                                        
+ temperature                                                                                                                                                                                                                                                     
+ temperature                                                                                                                                                                                                                                                     
+ pressure                                                                                                                                                                                                                                                        
+ heat flux                                                                                                                                                                                                                                                       
+ FieldBundle example 1 returned
+ FieldBundle example 2 returned, fieldcount =            1
+ FieldBundle example 3 returned, fieldcount =            3
+ FieldBundle example 4 returned, field names = pressure, pressure
+ FieldBundle name = atmosphere data
+ heat flux                                                                                                                                                                                                                                                       
+ pressure                                                                                                                                                                                                                                                        
+ temperature                                                                                                                                                                                                                                                     
+ temperature                                                                                                                                                                                                                                                     
+ pressure                                                                                                                                                                                                                                                        
+ heat flux                                                                                                                                                                                                                                                       
+ FieldBundle example 1 returned
+ FieldBundle example 2 returned, fieldcount =            1
+ FieldBundle example 3 returned, fieldcount =            3
+ FieldBundle example 4 returned, field names = pressure, pressure
+ FieldBundle name = atmosphere data
+ heat flux                                                                                                                                                                                                                                                       
+ pressure                                                                                                                                                                                                                                                        
+ temperature                                                                                                                                                                                                                                                     
+ temperature                                                                                                                                                                                                                                                     
+ pressure                                                                                                                                                                                                                                                        
+ heat flux                                                                                                                                                                                                                                                       
+[Orion-20-09:385394:0:385394] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+[Orion-20-09:385395:0:385395] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+[Orion-20-09:385396:0:385396] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+[Orion-20-09:385397:0:385397] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+      587 #endif
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+      587 #endif
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+
+
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+      587 #endif
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+      587 #endif
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+
+==== backtrace (tid: 385397) ====
+ 0 0x0000000000737c63 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x000000000088ff61 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000fa1b00 esmf_meshmod_esmf_meshcreate1part_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:1407
+ 3 0x000000000040948e MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/FieldBundle/examples/ESMF_FieldBundleCreateEx.F90:481
+ 4 0x0000000000405613 main()  ???:0
+ 5 0x0000000000022495 __libc_start_main()  ???:0
+ 6 0x0000000000405519 _start()  ???:0
+=================================
+[Orion-20-09:385397] *** Process received signal ***
+[Orion-20-09:385397] Signal: Segmentation fault (11)
+[Orion-20-09:385397] Signal code:  (-6)
+[Orion-20-09:385397] Failing at address: 0x20e50005e175
+[Orion-20-09:385397] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7f57102875d0]
+==== backtrace (tid: 385395) ====
+ 0 0x0000000000737c63 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x000000000088ff61 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000fa1b00 esmf_meshmod_esmf_meshcreate1part_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:1407
+ 3 0x000000000040948e MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/FieldBundle/examples/ESMF_FieldBundleCreateEx.F90:481
+ 4 0x0000000000405613 main()  ???:0
+ 5 0x0000000000022495 __libc_start_main()  ???:0
+ 6 0x0000000000405519 _start()  ???:0
+=================================
+[Orion-20-09:385395] *** Process received signal ***
+[Orion-20-09:385395] Signal: Segmentation fault (11)
+[Orion-20-09:385395] Signal code:  (-6)
+[Orion-20-09:385395] Failing at address: 0x20e50005e173
+[Orion-20-09:385397] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7f570ea20c63]
+[Orion-20-09:385395] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7fd240bbe5d0]
+[Orion-20-09:385397] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7f570eb78f61]
+[Orion-20-09:385395] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7fd23f357c63]
+[Orion-20-09:385395] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7fd23f4aff61]
+[Orion-20-09:385397] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreate1part_+0xce0)[0x7f570f28ab00]
+[Orion-20-09:385397] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x40948e]
+[Orion-20-09:385397] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x405613]
+[Orion-20-09:385397] [ 6] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7f570a736495]
+[Orion-20-09:385397] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x405519]
+[Orion-20-09:385397] *** End of error message ***
+[Orion-20-09:385395] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreate1part_+0xce0)[0x7fd23fbc1b00]
+[Orion-20-09:385395] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x40948e]
+[Orion-20-09:385395] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x405613]
+[Orion-20-09:385395] [ 6] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7fd23b06d495]
+[Orion-20-09:385395] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x405519]
+[Orion-20-09:385395] *** End of error message ***
+==== backtrace (tid: 385396) ====
+ 0 0x0000000000737c63 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x000000000088ff61 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000fa1b00 esmf_meshmod_esmf_meshcreate1part_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:1407
+ 3 0x000000000040948e MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/FieldBundle/examples/ESMF_FieldBundleCreateEx.F90:481
+ 4 0x0000000000405613 main()  ???:0
+ 5 0x0000000000022495 __libc_start_main()  ???:0
+ 6 0x0000000000405519 _start()  ???:0
+=================================
+[Orion-20-09:385396] *** Process received signal ***
+[Orion-20-09:385396] Signal: Segmentation fault (11)
+[Orion-20-09:385396] Signal code:  (-6)
+[Orion-20-09:385396] Failing at address: 0x20e50005e174
+[Orion-20-09:385396] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7f9c993da5d0]
+==== backtrace (tid: 385394) ====
+ 0 0x0000000000737c63 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x000000000088ff61 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000fa1b00 esmf_meshmod_esmf_meshcreate1part_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:1407
+ 3 0x000000000040948e MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/src/Infrastructure/FieldBundle/examples/ESMF_FieldBundleCreateEx.F90:481
+ 4 0x0000000000405613 main()  ???:0
+ 5 0x0000000000022495 __libc_start_main()  ???:0
+ 6 0x0000000000405519 _start()  ???:0
+=================================
+[Orion-20-09:385394] *** Process received signal ***
+[Orion-20-09:385394] Signal: Segmentation fault (11)
+[Orion-20-09:385394] Signal code:  (-6)
+[Orion-20-09:385394] Failing at address: 0x20e50005e172
+[Orion-20-09:385396] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7f9c97b73c63]
+[Orion-20-09:385394] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7f0852bfb5d0]
+[Orion-20-09:385396] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7f9c97ccbf61]
+[Orion-20-09:385394] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7f0851394c63]
+[Orion-20-09:385394] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7f08514ecf61]
+[Orion-20-09:385396] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreate1part_+0xce0)[0x7f9c983ddb00]
+[Orion-20-09:385396] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x40948e]
+[Orion-20-09:385396] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x405613]
+[Orion-20-09:385396] [ 6] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7f9c93889495]
+[Orion-20-09:385396] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x405519]
+[Orion-20-09:385396] *** End of error message ***
+[Orion-20-09:385394] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreate1part_+0xce0)[0x7f0851bfeb00]
+[Orion-20-09:385394] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x40948e]
+[Orion-20-09:385394] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x405613]
+[Orion-20-09:385394] [ 6] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7f084d0aa495]
+[Orion-20-09:385394] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_develop/esmf/examples/examplesO/Linux.pgi.64.openmpi.default/./ESMF_FieldBundleCreateEx[0x405519]
+[Orion-20-09:385394] *** End of error message ***
+srun: error: Orion-20-09: tasks 0-3: Segmentation fault
+srun: launch/slurm: _step_signal: Terminating StepId=10233028.324
